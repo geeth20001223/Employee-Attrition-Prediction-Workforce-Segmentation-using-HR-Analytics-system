@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 # ==== CONFIGURATION ====
-DATA_PATH = "/mnt/data/your_dataset.csv"  # Replace with your dataset path in repo or cloud
+DATA_PATH = "WA_Fn-UseC_-HR-Employee-Attrition.csv"  # Replace with your dataset path in repo or cloud
 MODEL_PATH = "catboost_employee_attrition_model.cbm"
 
 # === LOAD DATA ===
