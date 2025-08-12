@@ -15,7 +15,7 @@ MODEL_PATH = "catboost_employee_attrition_model.cbm"
 # === LOAD DATA ===
 @st.cache_data
 def load_data():
-    df = pd.read_csv(DATA_PATH)
+    df = pd.read_csv(WA_Fn-UseC_-HR-Employee-Attrition.csv)
     return df
 
 # === LOAD MODEL ===
