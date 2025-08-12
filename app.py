@@ -9,20 +9,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 # ==== CONFIGURATION ====
-DATA_PATH = "WA_Fn-UseC_-HR-Employee-Attrition.csv"  # Replace with your dataset path in repo or cloud
-MODEL_PATH = "catboost_employee_attrition_model.cbm"
+DATA_PATH = "WA_Fn-UseC_-HR-Employee-Attrition.csv"  # Dataset path
+MODEL_PATH = "catboost_employee_attrition_model.cbm"  # Model path
 
 # === LOAD DATA ===
 @st.cache_data
 def load_data():
-    df = pd.read_csv(WA_Fn-UseC_-HR-Employee-Attrition.csv)
+    df = pd.read_csv(DATA_PATH)
     return df
 
 # === LOAD MODEL ===
 @st.cache_resource
 def load_model():
     model = CatBoostClassifier()
-    model.load_model(catboost_employee_attrition_model.cbm)
+    model.load_model(MODEL_PATH)
     return model
 
 # Load model & data
@@ -169,6 +169,7 @@ elif page == "Model Prediction":
             "YearsWithCurrManager": [years_with_curr_manager],
         })
 
+        # Select only features that the model was trained on
         input_data = input_data[model.feature_names_]
 
         cat_features = [
