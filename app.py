@@ -22,7 +22,7 @@ def load_data():
 @st.cache_resource
 def load_model():
     model = CatBoostClassifier()
-    model.load_model(MODEL_PATH)
+    model.load_model(catboost_employee_attrition_model.cbm)
     return model
 
 # Load model & data
